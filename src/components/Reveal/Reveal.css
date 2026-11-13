@@ -1,0 +1,46 @@
+.reveal {
+  transition:
+    opacity 850ms ease,
+    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(64px) scale(0.97);
+}
+.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* In supporting browsers, scrolling controls the entrance frame by frame.
+   IntersectionObserver remains the fallback for other browsers. */
+@supports (animation-timeline: view()) {
+  .reveal-ready {
+    transition: none;
+    animation: scroll-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(64px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.reveal:focus-within {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

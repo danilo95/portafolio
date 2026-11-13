@@ -1,0 +1,217 @@
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  background: var(--surface);
+  transition:
+    border-color 200ms,
+    transform 200ms;
+}
+.project-card:hover {
+  border-color: #547267;
+  transform: translateY(-4px);
+}
+.project-art {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  padding: 24px;
+  background: radial-gradient(ellipse at 50% 100%, #2b6553, transparent 80%), #162b25;
+  color: #a3dbbf;
+}
+.project-art-top,
+.project-art-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+.project-art-top svg {
+  font-size: 18px;
+}
+.project-art-bottom {
+  position: absolute;
+  bottom: 22px;
+  left: 24px;
+  right: 24px;
+}
+.shop-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 185px;
+  transform: rotate(-5deg);
+}
+.shop-visual strong {
+  font-size: 40px;
+  letter-spacing: -2px;
+  color: #e0f7e8;
+}
+.shop-visual strong > span {
+  font-size: 16px;
+  vertical-align: top;
+}
+.shop-visual small {
+  display: block;
+  font-size: 6px;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+.shop-bag {
+  position: relative;
+  width: 72px;
+  height: 78px;
+  border-radius: 7px 7px 13px 13px;
+  background: linear-gradient(140deg, #a0e6bc, #5dbd8d);
+  box-shadow: 8px 8px 0 #0d241f66;
+  color: #133a2a;
+  display: grid;
+  place-items: center;
+  font-size: 45px;
+  font-weight: 800;
+}
+.shop-bag::before {
+  content: "";
+  width: 28px;
+  height: 23px;
+  position: absolute;
+  border: 4px solid #a0e6bc;
+  border-bottom: 0;
+  border-radius: 15px 15px 0 0;
+  top: -20px;
+}
+.project-doom .project-art {
+  background: radial-gradient(ellipse at 50% 30%, #383351, transparent 75%), #181722;
+  color: #b9acd8;
+}
+.doom-visual {
+  height: 190px;
+  display: grid;
+  place-items: center;
+}
+.doom-visual > strong {
+  position: relative;
+  font-size: 69px;
+  font-weight: 900;
+  letter-spacing: -6px;
+  transform: perspective(180px) rotateX(-12deg);
+  color: #d5c9eb;
+  text-shadow:
+    0 5px #665384,
+    0 9px #352942;
+}
+.doom-visual strong span {
+  display: block;
+  text-align: center;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-shadow: none;
+  margin-top: 6px;
+}
+.doom-grid {
+  position: absolute;
+  inset: 100px -60px -110px;
+  background-image:
+    linear-gradient(#ad9acf18 1px, transparent 1px),
+    linear-gradient(90deg, #ad9acf18 1px, transparent 1px);
+  background-size: 32px 32px;
+  transform: perspective(160px) rotateX(50deg);
+}
+.doom-crosshair {
+  position: absolute;
+  right: 40px;
+  top: 130px;
+  opacity: 0.5;
+  font-family: monospace;
+}
+.project-content {
+  padding: 30px;
+}
+.project-content .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+.project-content h3 {
+  font-size: 25px;
+  letter-spacing: -0.8px;
+  margin: 14px 0;
+}
+.project-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  min-height: 100px;
+}
+.project-tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 28px;
+}
+.project-tags li {
+  color: #acbcb5;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 10px;
+}
+.project-actions {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.project-view {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.repo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.repo-links a {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+.repo-links a:hover {
+  color: var(--text);
+}
+@media (max-width: 480px) {
+  .project-content {
+    padding: 23px;
+  }
+  .shop-visual {
+    gap: 13px;
+  }
+  .shop-visual strong {
+    font-size: 32px;
+  }
+  .project-art {
+    height: 240px;
+  }
+  .shop-visual {
+    height: 160px;
+  }
+  .doom-visual {
+    height: 160px;
+  }
+}
